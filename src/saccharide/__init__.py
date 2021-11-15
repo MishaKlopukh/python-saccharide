@@ -1,4 +1,4 @@
-from .sugarmodule impot SugarModule
+from .sugarmodule import SugarModule
 SugarModule(private_default=True)
 
 from .wrappers import *
