@@ -1,5 +1,5 @@
 import sys
-from inspect import current_frame
+from inspect import currentframe
 from types import ModuleType
 from .wrappers import method_with_attrs
 
@@ -53,12 +53,12 @@ class SugarModule(ModuleType):
     def _can_access(self, attr):
         if attr in SugarModule._getattr(self,'_private'):
             return False
-        elif attr not in super(SugarModule,self).__dir__():
-            return True
         elif SugarModule._getattr(self,'_priv_def'):
             if attr.startswith('__'):
                 return True
             elif attr in self.__all__:
+                return True
+            elif attr not in super(SugarModule,self).__dir__():
                 return True
             else:
                 return False
