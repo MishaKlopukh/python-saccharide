@@ -3,6 +3,7 @@ SugarModule(private_default=True)
 
 from .wrappers import *
 from .stubs import *
+from ._version import __version__
 
 export(
     SugarModule,
