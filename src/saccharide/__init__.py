@@ -1,9 +1,8 @@
 from .sugarmodule import SugarModule
-SugarModule(private_default=True)
-
 from .wrappers import *
 from .stubs import *
 from ._version import __version__
+SugarModule(private_default=True)
 
 export(
     SugarModule,
