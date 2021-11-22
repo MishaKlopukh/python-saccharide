@@ -53,7 +53,7 @@ def method_with_attrs(method):
         def __init__(self,parent):
             super(_f,self).__setattr__('parent',parent)
         def __call__(self,*args,**kwargs):
-            if self.loop_over_args:
+            if self.loop_over_args and len(args)>2:
                 return [self.func(super(_f,self).__getattribute__('parent'),arg,**kwargs) for arg in args]
             else:
                 return self.func(super(_f,self).__getattribute__('parent'),*args,**kwargs)
